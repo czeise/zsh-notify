@@ -30,6 +30,8 @@ function is-terminal-active() {
             term=iterm2
         elif [[ "$TERM_PROGRAM" == 'Apple_Terminal' ]] || [[ -n "$TERM_SESSION_ID" ]]; then
             term=apple-terminal
+        elif [[ "$TERM_PROGRAM" == 'vscode' ]]; then
+            term=vscode
         else
             return 2
         fi
