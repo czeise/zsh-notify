@@ -24,6 +24,8 @@ _When using `tmux` on Yosemite:_
 `reattach-to-user-namespace` is required to prevent `terminal-notifier` from hanging
 (see [julienXX/terminal-notifier#115][issue115] for details).
 
+
+
 #### Linux/Other
 
 Install `notify-send` (default*) -- available in [libnotify][libnotify]
@@ -129,6 +131,10 @@ sourcing `notify.plugin.zsh`.
 
         zstyle ':notify:*' always-check-active-window yes
 
+- Ignore checking if the terminal is focused at all:
+
+        zstyle ':notify:*' check-focus no
+
 [terminal-notifier]: https://github.com/alloy/terminal-notifier 
 [libnotify]: https://github.com/GNOME/libnotify
 [iterm2]: http://www.iterm2.com/
@@ -146,10 +152,19 @@ Antigen will handle cloning the plugin for you automatically the next time you
 start zsh. You can also add the plugin to a running zsh with `antigen bundle
 marzocchi/zsh-notify` for testing before adding it to your `.zshrc`.
 
+### [Fig](https://fig.io)
+
+Fig adds apps, shortcuts, and autocomplete to your existing terminal.
+
+Install `zsh-notify` in just one click.
+
+<a href="https://fig.io/plugins/other/zsh-notify_marzocchi" target="_blank"><img src="https://fig.io/badges/install-with-fig.svg" /></a>
+
+
 ### [Oh-My-Zsh](http://ohmyz.sh/)
 
 1. `git clone git@github.com:marzocchi/zsh-notify.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/notify`
-2. Add zsh-notify to your plugin list - edit `~./zshrc` and change `plugins=(...)` to `plugins=(... notify)`
+2. Add zsh-notify to your plugin list - edit `~/.zshrc` and change `plugins=(...)` to `plugins=(... notify)`
 
 **Note:** when cloning, specify the target directory as `notify` since
 Oh-My-Zsh expects the plugin's initialization file to have the same name as

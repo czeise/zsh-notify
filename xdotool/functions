@@ -121,6 +121,10 @@ function zsh-notify() {
 # existing shells in the previous window, but in all other cases it will be
 # incorrect.
 function store-window-id() {
+    if ! (zstyle -t ':notify:' check-focus); then
+        return
+    fi
+
     local always_check
     zstyle -b ':notify:' always-check-active-window always_check || true
 
